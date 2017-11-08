@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: minecraft
+    environment:
+      EULA: "TRUE"
+      TYPE: "SPIGOT"
+      SPIGOT_DOWNLOAD_URL: "https://datatroid.nyc3.digitaloceanspaces.com/fegamcraft/spigot-1.12.1.jar"
+      ONLINE_MODE: "FALSE"
+      CONSOLE: "false"
+    volumes:
+      - ./data:/data
+    ports:
+      - "25565:25565"
+      - "8123:8123"
+      - "20059:20059"
+      - "20060:20060"
+      - "20061:20061"
+    restart: always
